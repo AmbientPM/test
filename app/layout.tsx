@@ -34,7 +34,10 @@ export default function RootLayout({
       >
         {/* Вертикальные границы 1440px */}
         <div className="fixed inset-0 pointer-events-none z-50">
-          <div className="max-w-[1440px] mx-auto h-full border-x-2" style={{ borderColor: 'var(--border-light)' }}></div>
+          <div
+            className="max-w-[1440px] mx-auto h-full border-x-2"
+            style={{ borderColor: "var(--border-light)" }}
+          ></div>
         </div>
         {children}
       </body>

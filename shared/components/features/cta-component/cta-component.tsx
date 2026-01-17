@@ -20,7 +20,7 @@ export default function CtaComponent() {
             className="inline-flex items-center justify-center px-9 py-3.5 font-sf-light-italic text-[70px] rounded-full"
             style={{
               background:
-                "radial-gradient(ellipse 90% 80% at 50% 60%, var(--primary-blue-soft) 0%, var(--primary-blue-deep) 100%)",
+                "radial-gradient(circle, var(--primary-blue-soft) 0%, var(--primary-blue-deep) 100%)",
             }}
           >
             <span

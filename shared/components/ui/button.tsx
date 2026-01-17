@@ -22,19 +22,20 @@ const sizeClasses: Record<ButtonSize, string> = {
 
 const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
   primary: {
-    background: 'linear-gradient(to bottom, var(--primary-blue-light), var(--primary-blue-dark))',
-    color: 'white',
-    border: 'none',
+    background:
+      "linear-gradient(to bottom, var(--primary-blue-light), var(--primary-blue-dark))",
+    color: "white",
+    border: "none",
   },
   secondary: {
-    backgroundColor: 'white',
-    color: 'var(--text-muted)',
-    border: '1px solid var(--border-input)',
+    backgroundColor: "white",
+    color: "var(--text-muted)",
+    border: "1px solid var(--border-input)",
   },
   outline: {
-    backgroundColor: 'white',
-    color: 'var(--text-outline)',
-    border: '1px solid var(--border-input)',
+    backgroundColor: "white",
+    color: "var(--text-outline)",
+    border: "1px solid var(--border-input)",
   },
 };
 
