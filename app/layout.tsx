@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const sfProDisplayRegular = localFont({
+  src: "../public/fonts/SFPRODISPLAYREGULAR.woff2",
+  variable: "--font-sf-regular",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const sfProDisplayMedium = localFont({
+  src: "../public/fonts/SFPRODISPLAYMEDIUM.woff2",
+  variable: "--font-sf-medium",
+});
+
+const sfProDisplayLightItalic = localFont({
+  src: "../public/fonts/SFPRODISPLAYLIGHTITALIC.woff2",
+  variable: "--font-sf-light-italic",
 });
 
 export const metadata: Metadata = {
@@ -25,8 +30,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${sfProDisplayRegular.variable} ${sfProDisplayMedium.variable} ${sfProDisplayLightItalic.variable} antialiased relative`}
       >
+        {/* Вертикальные границы 1440px */}
+        <div className="fixed inset-0 pointer-events-none z-50">
+          <div className="max-w-[1440px] mx-auto h-full border-x-2 border-[#ECECEC]"></div>
+        </div>
         {children}
       </body>
     </html>
