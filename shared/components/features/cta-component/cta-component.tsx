@@ -84,31 +84,7 @@ export default function CtaComponent() {
           iconPosition="left"
           icon={
             <ButtonIcon bgColor="bg-soft-pink" size={50}>
-              <svg
-                width="24"
-                height="22"
-                viewBox="0 0 24 22"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 21.02C12 21.02 1 14.02 1 7.02C1 3.7 3.7 1 7 1C9.1 1 10.9 2.1 12 3.7C13.1 2.1 14.9 1 17 1C20.3 1 23 3.7 23 7.02C23 14.02 12 21.02 12 21.02Z"
-                  fill="url(#heartGradient)"
-                />
-                <defs>
-                  <linearGradient
-                    id="heartGradient"
-                    x1="12"
-                    y1="1"
-                    x2="12"
-                    y2="21.02"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="var(--accent-red)" />
-                    <stop offset="1" stopColor="var(--accent-red-light)" />
-                  </linearGradient>
-                </defs>
-              </svg>
+              <img src="/images/hero/heart.svg" alt="" width="24" height="22" />
             </ButtonIcon>
           }
         >

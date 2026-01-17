@@ -17,7 +17,7 @@ interface ButtonProps {
 const sizeClasses: Record<ButtonSize, string> = {
   sm: "h-10 px-2 text-sm gap-2",
   md: "h-12 px-3 text-sm gap-2.5",
-  lg: "h-[74px] px-4 text-lg gap-3",
+  lg: "h-[74px] px-8 text-lg gap-3",
 };
 
 const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
@@ -56,6 +56,9 @@ export default function Button({
   withTexture = false,
 }: ButtonProps) {
   const isIconLeft = iconPosition === "left";
+
+  // Отступ для текста, чтобы не залезал под иконку (иконка 50px + gap 10px)
+  const iconPadding = icon ? "40px" : undefined;
 
   return (
     <button
@@ -97,15 +100,25 @@ export default function Button({
         </div>
       )}
 
-      {/* Icon left */}
-      {icon && isIconLeft && <span className="z-10 flex-shrink-0">{icon}</span>}
+      {/* Icon left - absolute positioned */}
+      {icon && isIconLeft && (
+        <span className="z-10 flex-shrink-0 absolute left-3">{icon}</span>
+      )}
 
-      {/* Text - centered */}
-      <span className="z-10">{children}</span>
+      {/* Text - centered with padding to avoid icon overlap */}
+      <span
+        className="z-10"
+        style={{
+          paddingLeft: isIconLeft ? iconPadding : undefined,
+          paddingRight: !isIconLeft ? iconPadding : undefined,
+        }}
+      >
+        {children}
+      </span>
 
-      {/* Icon right */}
+      {/* Icon right - absolute positioned */}
       {icon && !isIconLeft && (
-        <span className="z-10 flex-shrink-0">{icon}</span>
+        <span className="z-10 flex-shrink-0 absolute right-3">{icon}</span>
       )}
     </button>
   );
@@ -123,7 +136,7 @@ export function ButtonIcon({
 }) {
   return (
     <div
-      className={`rounded-full flex items-center justify-center shadow-[0px_2px_2px_rgba(0,0,0,0.13)] ${bgColor}`}
+      className={`rounded-full flex items-center justify-center ${bgColor}`}
       style={{ width: `${size}px`, height: `${size}px` }}
     >
       {children}

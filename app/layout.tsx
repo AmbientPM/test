@@ -13,8 +13,13 @@ const sfProDisplayMedium = localFont({
 });
 
 const sfProDisplayLightItalic = localFont({
-  src: "../public/fonts/SFPRODISPLAYLIGHTITALIC.woff2",
+  src: "../public/fonts/sf-pro-display-regular-italic.woff2",
   variable: "--font-sf-light-italic",
+});
+
+const sfProDisplaySemiBoldItalic = localFont({
+  src: "../public/fonts/SFPRODISPLAYSEMIBOLDITALIC.woff2",
+  variable: "--font-sf-semibold-italic",
 });
 
 export const metadata: Metadata = {
@@ -30,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sfProDisplayRegular.variable} ${sfProDisplayMedium.variable} ${sfProDisplayLightItalic.variable} antialiased relative`}
+        className={`${sfProDisplayRegular.variable} ${sfProDisplayMedium.variable} ${sfProDisplayLightItalic.variable} ${sfProDisplaySemiBoldItalic.variable} antialiased relative`}
       >
         {/* Вертикальные границы 1440px */}
         <div className="fixed inset-0 pointer-events-none z-50">
