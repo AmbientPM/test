@@ -11,17 +11,18 @@ const navItems = [
 
 export default function Header() {
   return (
-    <header className="w-full py-6.75 border-b-2 border-[#ECECEC]">
+    <header className="w-full py-6.75 border-b-2" style={{ borderColor: 'var(--border-light)' }}>
       <div className="max-w-[1440px] mx-auto flex items-center justify-center px-0.5">
         {/* Empty spacer for balance */}
         <div className="flex-1"></div>
 
         {/* Logo + Navigation - pill container */}
         <div
-          className="flex items-center h-12 px-5 rounded-full border border-[#ECECEC]"
+          className="flex items-center h-12 px-5 rounded-full border"
           style={{
+            borderColor: 'var(--border-light)',
             background:
-              "linear-gradient(90deg, rgba(251, 252, 255, 1) 0%, rgba(254, 254, 254, 1) 49%, rgba(251, 252, 255, 1) 100%)",
+              "linear-gradient(90deg, var(--bg-gradient-start) 0%, var(--bg-gradient-mid) 49%, var(--bg-gradient-start) 100%)",
           }}
         >
           {/* Logo */}
@@ -36,15 +37,15 @@ export default function Header() {
           </Link>
 
           {/* Logo divider */}
-          <div className="w-px h-4 bg-[#C2C2C2] mx-6"></div>
+          <div className="w-px h-4 mx-6" style={{ backgroundColor: 'var(--border-divider)' }}></div>
 
           {/* Navigation */}
           <nav className="flex items-center gap-6">
             {navItems.map((item, index) => (
               <div key={item.label} className="flex items-center gap-6">
                 <button
-                  className="flex items-center gap-1.5 text-sm text-[#151515] hover:text-black transition-colors"
-                  style={{ fontFamily: "var(--font-sf-regular)" }}
+                  className="flex items-center gap-1.5 text-sm hover:text-black transition-colors"
+                  style={{ fontFamily: "var(--font-sf-regular)", color: 'var(--text-primary)' }}
                 >
                   {item.label}
                   {item.hasDropdown && (
@@ -57,7 +58,7 @@ export default function Header() {
                     >
                       <path
                         d="M1 1L5 5L1 9"
-                        stroke="#3D78FF"
+                        stroke="var(--primary-blue)"
                         strokeWidth="1.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -67,7 +68,7 @@ export default function Header() {
                 </button>
                 {/* Divider between nav items */}
                 {index < navItems.length - 1 && (
-                  <div className="w-[1px] h-3 bg-[#E4E4E4]"></div>
+                  <div className="w-[1px] h-3" style={{ backgroundColor: 'var(--border-nav)' }}></div>
                 )}
               </div>
             ))}

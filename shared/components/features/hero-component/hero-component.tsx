@@ -71,7 +71,7 @@ export default function HeroComponent() {
           className="absolute inset-0 rounded-full"
           style={{
             background:
-              "radial-gradient(circle at center, transparent 0%, rgba(24, 140, 255, 0.08) 50%, transparent 100%)",
+              "radial-gradient(circle at center, transparent 0%, var(--primary-blue-glow) 50%, transparent 100%)",
           }}
         />
 
@@ -127,7 +127,7 @@ export default function HeroComponent() {
             left: "50%",
             transform: "translate(-50%, -50%)",
             background:
-              "radial-gradient(circle at center, rgba(243, 247, 252, 1) 0%, rgba(243, 247, 252, 0) 100%)",
+              "radial-gradient(circle at center, var(--bg-center-circle) 0%, rgba(243, 247, 252, 0) 100%)",
           }}
         />
 

@@ -22,7 +22,7 @@ export default function HeroComponentItem({
         width: size,
         height: size,
         borderRadius: size / 2,
-        backgroundColor: "rgba(64, 130, 255, 0.25)",
+        backgroundColor: "var(--primary-blue-icon-bg)",
       }}
     >
       <Image

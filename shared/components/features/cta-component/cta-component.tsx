@@ -12,7 +12,7 @@ export default function CtaComponent() {
             fontFamily: "var(--font-sf-medium)",
             fontSize: "42px",
             lineHeight: "84px",
-            color: "#030026",
+            color: "var(--text-dark)",
           }}
         >
           {/* Remove pill */}
@@ -20,13 +20,13 @@ export default function CtaComponent() {
             className="inline-flex items-center justify-center px-9 py-3.5 font-sf-light-italic text-[70px] rounded-full"
             style={{
               background:
-                "radial-gradient(ellipse 90% 80% at 50% 60%, #6897FE 0%, #296AFF 100%)",
+                "radial-gradient(ellipse 90% 80% at 50% 60%, var(--primary-blue-soft) 0%, var(--primary-blue-deep) 100%)",
             }}
           >
             <span
               style={{
                 background:
-                  "radial-gradient(ellipse 100% 90% at 50% 55%, #FFFFFF 0%, #E1EFFF 100%)",
+                  "radial-gradient(ellipse 100% 90% at 50% 55%, var(--gradient-text-light) 0%, var(--gradient-text-blue) 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -45,7 +45,7 @@ export default function CtaComponent() {
             fontFamily: "var(--font-sf-regular)",
             fontSize: "24px",
             lineHeight: "36px",
-            color: "#2A2A43",
+            color: "var(--text-secondary)",
           }}
         >
           We scan the web for stolen photos & videos and remove them fast.{" "}
@@ -63,7 +63,7 @@ export default function CtaComponent() {
           withTexture
           className="text-[26px]"
           icon={
-            <ButtonIcon bgColor="bg-[#EFF6FF]" size={50}>
+            <ButtonIcon bgColor="bg-soft-blue" size={50}>
               <img
                 src="/images/hero/cta-icon.svg"
                 alt=""
@@ -83,7 +83,7 @@ export default function CtaComponent() {
           className="text-[26px]"
           iconPosition="left"
           icon={
-            <ButtonIcon bgColor="bg-[#FFF0F0]" size={50}>
+            <ButtonIcon bgColor="bg-soft-pink" size={50}>
               <svg
                 width="24"
                 height="22"
@@ -104,8 +104,8 @@ export default function CtaComponent() {
                     y2="21.02"
                     gradientUnits="userSpaceOnUse"
                   >
-                    <stop stopColor="#FF3E3E" />
-                    <stop offset="1" stopColor="#FF5959" />
+                    <stop stopColor="var(--accent-red)" />
+                    <stop offset="1" stopColor="var(--accent-red-light)" />
                   </linearGradient>
                 </defs>
               </svg>

@@ -20,11 +20,22 @@ const sizeClasses: Record<ButtonSize, string> = {
   lg: "h-[74px] px-4 text-lg gap-3",
 };
 
-const variantClasses: Record<ButtonVariant, string> = {
-  primary:
-    "bg-gradient-to-b from-[#4081FF] to-[#3578F8] text-white border-none",
-  secondary: "bg-white text-[#595959] border border-[#E8EAEC]",
-  outline: "bg-white text-[#0B0836] border border-[#E8EAEC]",
+const variantStyles: Record<ButtonVariant, React.CSSProperties> = {
+  primary: {
+    background: 'linear-gradient(to bottom, var(--primary-blue-light), var(--primary-blue-dark))',
+    color: 'white',
+    border: 'none',
+  },
+  secondary: {
+    backgroundColor: 'white',
+    color: 'var(--text-muted)',
+    border: '1px solid var(--border-input)',
+  },
+  outline: {
+    backgroundColor: 'white',
+    color: 'var(--text-outline)',
+    border: '1px solid var(--border-input)',
+  },
 };
 
 const fontClasses: Record<ButtonVariant, string> = {
@@ -51,11 +62,11 @@ export default function Button({
         relative flex items-center justify-center rounded-full overflow-hidden 
         transition-all hover:opacity-90
         ${sizeClasses[size]}
-        ${variantClasses[variant]}
         ${fontClasses[variant]}
         ${className}
       `}
       style={{
+        ...variantStyles[variant],
         fontFamily:
           variant === "primary"
             ? "var(--font-sf-medium)"
@@ -102,7 +113,7 @@ export default function Button({
 // Icon wrapper component for consistent styling
 export function ButtonIcon({
   children,
-  bgColor = "bg-[#EFF6FF]",
+  bgColor = "bg-soft-blue",
   size = 50,
 }: {
   children: ReactNode;
